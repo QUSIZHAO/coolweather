@@ -2,6 +2,7 @@ package com.qsz.coolweather.android;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -32,6 +33,7 @@ import okhttp3.Response;
 
 /**
  * Created by QSZ on 2018/6/8 13:26
+ *
  * @author QSZ
  */
 public class ChooseAreaFragment extends Fragment {
@@ -101,6 +103,12 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = mCityList.get(position);
                     queryCities();
+                } else if (currentLevel == LEVEL_COUNTY) {
+                    String weatherId = mCountyList.get(position).getWeatherId();
+                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                    intent.putExtra("weather_id", weatherId);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
