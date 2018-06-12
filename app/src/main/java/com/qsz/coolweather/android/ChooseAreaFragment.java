@@ -90,6 +90,8 @@ public class ChooseAreaFragment extends Fragment {
         titleText = view.findViewById(R.id.title_text);
         backButton = view.findViewById(R.id.back_button);
         mListView = view.findViewById(R.id.list_view);
+        // mAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, dataList);
+        // android 23之后调用getContext()方法
         mAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, dataList);
         mListView.setAdapter(mAdapter);
         return view;
