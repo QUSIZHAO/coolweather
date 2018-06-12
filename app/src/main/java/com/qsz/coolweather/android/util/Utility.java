@@ -3,6 +3,7 @@ package com.qsz.coolweather.android.util;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+
 import com.qsz.coolweather.android.db.City;
 import com.qsz.coolweather.android.db.County;
 import com.qsz.coolweather.android.db.Province;
@@ -14,8 +15,11 @@ import org.json.JSONObject;
 
 /**
  * Created by QSZ on 2018/6/8 11:15
+ *
+ * @author QSZ
  */
 public class Utility {
+
     /**
      * 解析和处理服务器返回的省级数据
      */
@@ -26,7 +30,7 @@ public class Utility {
                 for (int i = 0; i < allProvinces.length(); i++) {
                     JSONObject provinceObject = allProvinces.getJSONObject(i);
                     Province province = new Province();
-                    province.setProvinceName(provinceObject.getString("mame"));
+                    province.setProvinceName(provinceObject.getString("name"));
                     province.setProvinceCode(provinceObject.getInt("id"));
                     province.save();
                 }
@@ -98,4 +102,5 @@ public class Utility {
         }
         return null;
     }
+
 }

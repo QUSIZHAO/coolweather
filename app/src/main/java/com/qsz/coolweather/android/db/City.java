@@ -3,13 +3,16 @@ package com.qsz.coolweather.android.db;
 import org.litepal.crud.DataSupport;
 
 /**
- * Created by QSZ on 2018/6/8 10:50
+ * @author QSZ
  */
 public class City extends DataSupport {
 
     private int id;
+
     private String cityName;
+
     private int cityCode;
+
     private int provinceId;
 
     public int getId() {
@@ -43,4 +46,5 @@ public class City extends DataSupport {
     public void setProvinceId(int provinceId) {
         this.provinceId = provinceId;
     }
+
 }
